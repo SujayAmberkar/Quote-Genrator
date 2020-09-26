@@ -1,4 +1,8 @@
-// http://api.forismatic.com/api/1.0/
+const quoteContainer = document.getElementById('quote-container');
+const quoteText = document.getElementById('quote');
+const authorText = document.getElementById('author');
+const twitterBtn = document.getElementById('twitter');
+const newQuoteBtn = document.getElementById('new-quote');
 
 //Get Quote from API
 async function getQuote() {
@@ -7,9 +11,25 @@ async function getQuote() {
     try{
         const response = await fetch(proxyUrl + apiUrl);
         const data = await response.json();
+        //if author is blank , add anonymous
+        if(data.quoteAuthor===''){
+            authorText.innerText="Anonymous"
+        }
+        else{
+            authorText.innerText = data.quoteAuthor;
+        }
+        //reduce font-size for long quotes
+        if(data.quoteText.length>120){
+            quoteText.classList.add('long-quote')
+        }
+        else{
+            quoteText.classList.remove('long-quote')
+        }
+        quoteText.innerText=data.quoteText;
         console.log(data);
     }
     catch(error){
+        getQuote();
         console.log('whoops, no Quote',error);
     }
 }
