@@ -76,6 +76,55 @@ button:active{
 .fa-twitter{
     font-size:1.5rem;
 }
+
+/* loader css */
+@keyframes ldio-4t7xejllftf {
+            0% {
+                transform: rotate(0deg)
+            }
+    
+            50% {
+                transform: rotate(180deg)
+            }
+    
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+    
+        .ldio-4t7xejllftf div {
+            position: absolute;
+            animation: ldio-4t7xejllftf 1.02s linear infinite;
+            width: 185px;
+            height: 185px;
+            top: 32.5px;
+            left: 32.5px;
+            border-radius: 50%;
+            box-shadow: 0 6.25px 0 0 #38a1f3;
+            transform-origin: 92.5px 95.625px;
+        }
+    
+        .loadingio-spinner-eclipse-lg73drna4kh {
+            width: 250px;
+            height: 250px;
+            display: inline-block;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0);
+        }
+    
+        .ldio-4t7xejllftf {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform: translateZ(0) scale(1);
+            backface-visibility: hidden;
+            transform-origin: 0 0;
+            /* see note above */
+        }
+    
+        .ldio-4t7xejllftf div {
+            box-sizing: content-box;
+        }
 /* Media query */
 @media screen and (max-width:1000px){
     .quote-container{
