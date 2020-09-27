@@ -33,7 +33,16 @@ async function getQuote() {
         console.log('whoops, no Quote',error);
     }
 }
+//tweet quote
+function tweetQuote() {
+    const quote = quoteText.innerText;
+    const author= authorText.innerText;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${quote} - ${author}`;
+    window.open(twitterUrl,'_blank'); //_blank to open it in new tab
 
-
+}
+//Event listener
+newQuoteBtn.addEventListener('click',getQuote);
+twitterBtn.addEventListener('click',tweetQuote);
 //on load
 getQuote();
